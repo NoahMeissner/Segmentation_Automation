@@ -9,7 +9,6 @@ openai.api_base = os.getenv("API_BASE")
 openai.api_version = os.getenv("API_VERSION")
 openai.api_key = os.getenv("API_KEY")
 
-print(openai.api_base)
 
 
 response = openai.ChatCompletion.create(

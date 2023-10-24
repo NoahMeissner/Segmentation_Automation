@@ -1,5 +1,6 @@
 from main import LLM
 
+
 # questions which the user inputs
 ls = ["""Hello! We are going to help you label your object. We need you to answer a few simple questions. 
         Are you ready to begin?""",
@@ -27,7 +28,7 @@ def ask_question (list, answer):
 
     else:
         set_answer = input(list[0]+'\n')
-        if set_answer == 'true':
+        if set_answer != 'yes':
             answer.append(set_answer)
         list = list[1:]
         return ask_question(list, answer)
@@ -60,4 +61,6 @@ def assign_color(color_as_String):
     """
     return dict_color(color_as_String)
 
-print(tuple(ask_question(ls, [])))
+if __name__ == "__main__":
+    object_LLM = LLM(tuple((ask_question(ls, []))))
+    answer = object_LLM.getanswer()
