@@ -1,4 +1,3 @@
-
 import sys
 from Backend.chat import getQuestions
 from PyQt6.QtCore import Qt
@@ -31,6 +30,8 @@ class ChatBotApp(QMainWindow):
         self.layout.addWidget(self.send_button)
 
         self.central_widget.setLayout(self.layout)
+
+        # Connect Enter key press event to the "Send" button's click event
         self.send_button.installEventFilter(self)
 
     def eventFilter(self, source, event):
@@ -39,34 +40,32 @@ class ChatBotApp(QMainWindow):
             return True
         return super().eventFilter(source, event)
 
-
     def send_message(self):
         user_message = self.user_input.toPlainText()
         self.answer = self.ask_question(user_message, self.answer)
+        print(self.answer)
         self.messages_label.setText(self.messages_label.text() + f"\nUser: {user_message}")
         self.user_input.clear()
         self.messages_label.setText(self.messages_label.text() + f"\nSystemt: {self.questions[self.i]}")
-        self.i +=1
+        self.i += 1
 
-
-
-    def ask_question(self,input, answer):
-        if len(answer) == 3:
-            question = self.questions[5] \
+    def ask_question(self, input, answer):
+        if len(answer) == 4:
+            question = self.questions[0] \
                 .replace('${type}', answer[0]) \
                 .replace('${color}', answer[1]) \
                 .replace('${material}', answer[2]) \
-                .replace('${size}', input)
+                .replace('${size}', answer[3])
+            print('this')
             self.questions[5] = question
             set_answer = input
-            if set_answer.lower() == 'yes' or set_answer.lower() == 'true':
+            if set_answer == 'true':
                 return answer
             else:
                 return []
-
         else:
             set_answer = input
-            if set_answer.lower() != 'yes' and set_answer.lower() != 'true':
+            if set_answer != 'yes':
                 answer.append(set_answer)
             return answer
 

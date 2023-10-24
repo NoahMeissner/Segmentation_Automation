@@ -2,7 +2,11 @@ from Backend.LLM import LLM
 
 
 # questions which the user inputs
-ls = ["""Hello! We are going to help you label your object. We need you to answer a few simple questions. 
+
+
+class getQuestions:
+    def __init__(self):
+        self.ls = ["""Hello! We are going to help you label your object. We need you to answer a few simple questions. 
         Are you ready to begin?""",
       """What type of object is it? (e.g. sweater, pencil case)""",
       """Which color is the object? (e.g. blue)""",
@@ -12,6 +16,10 @@ ls = ["""Hello! We are going to help you label your object. We need you to answe
       """Great! You may close the chatbot now. Your object already exists in the database, so there no need
        to run the model.""",
       """Great! You may close the chatbot now. We ran the model, and now the object has been added to the database."""]
+
+    def get_question(self):
+        return self.ls
+
 
 def ask_question (list, answer):
     if len(list) == 3:
