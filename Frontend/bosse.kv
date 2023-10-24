@@ -1,0 +1,37 @@
+ChatBoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+    canvas.before:
+        Color:
+            rgba: 0.7686, 0.9059, 0.8314, 1  # #C4E7D4
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id: messages_label
+        text: "ChatBot: Hi! How can I help you?"
+        size_hint: 1, 0.8
+        color: 0.7255, 0.7686, 0.8549, 1  # #B9C0DA
+        canvas.before:
+            Color:
+                rgba: 0.6039, 0.5529, 0.6275, 1  # #998DA0
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        font_size: 16
+
+    TextInput:
+        id: user_input
+        hint_text: "Type your message here"
+        size_hint: 1, 0.1
+        background_color: 0.7686, 0.9059, 0.8314, 1  # #C4E7D4
+        font_size: 16
+
+    Button:
+        text: "Send"
+        on_press: root.send_message(self)
+        size_hint: 1, 0.1
+        background_color: 0.7686, 0.8549, 0.8118, 1  # #C4DACF
+        font_size: 16

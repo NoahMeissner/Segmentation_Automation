@@ -1,4 +1,4 @@
-from main import LLM
+from Backend.LLM import LLM
 
 
 # questions which the user inputs
