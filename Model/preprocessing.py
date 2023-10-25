@@ -66,10 +66,10 @@ for filename in os.listdir(input_directory):
                     y = float(coordinates[2 * i + 1])
 
                     # Calculate the center x and y, width, and height
-                    center_x = (x + x) / 2.0
-                    center_y = (y + y) / 2.0
-                    width = x - x
-                    height = y - y
+                    center_x = ((x + x) / 2.0) / 512
+                    center_y = ((y + y) / 2.0) / 424
+                    width = 1
+                    height = 1
 
                     # Write the YOLO format line to the output file
                     yolo_line = f"{class_label} {center_x} {center_y} {width} {height}\n"

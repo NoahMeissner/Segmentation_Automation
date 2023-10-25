@@ -4,8 +4,9 @@ test: "Test"
 val: "Validate"
 
 # Classes 
-nc: 1 # replace based on your dataset's number of classes 
+nc: 1 # replace based on your dataset's number of classes
 
 # Class names 
 # replace all class names with your own classes' names 
-names: ['marker']
+names:
+  0: 'marker'
