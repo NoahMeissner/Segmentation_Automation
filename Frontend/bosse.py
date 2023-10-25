@@ -28,8 +28,7 @@ class ChatBotApp(QMainWindow):
         self.setWindowTitle("Bosser")
         self.setGeometry(100, 100, 400, 400)
 
-        self.central_widget = QWidget(self)
-        self.setCentralWidget(self.central_widget)
+        self.central_widget = QWidget()
 
         self.layout = QVBoxLayout()
 
@@ -43,11 +42,18 @@ class ChatBotApp(QMainWindow):
         self.send_button.clicked.connect(self.send_message)
         self.layout.addWidget(self.send_button)
 
+        self.next_button = QPushButton("next")
+        self.next_button.clicked.connect(self.send_message)
+        self.next_button.setEnabled(False)
+        self.layout.addWidget(self.next_button)
+
+
         self.central_widget.setLayout(self.layout)
+        self.setCentralWidget(self.central_widget)
         self.send_button.installEventFilter(self)
 
     def eventFilter(self, source, event):
-        if source is self.user_input and event.type() == Qt.EventType.KeyPress and event.key() == Qt.Key.Key_Enter:
+        if source is self.user_input and event.type() == Qt.EventType.KeyPress and event.key() == Qt.Key.Enter:
             self.send_message()
             return True
         return super().eventFilter(source, event)
@@ -56,7 +62,6 @@ class ChatBotApp(QMainWindow):
     def send_message(self):
         user_message = self.user_input.toPlainText()
         self.answer = self.ask_question(user_message, self.answer)
-        print(self.answer)
         self.messages_label.setText(self.messages_label.text() + f"\nUser: {user_message}")
         self.user_input.clear()
         self.messages_label.setText(self.messages_label.text() + f"\nSystem: {self.questions[self.i]}")
@@ -77,8 +82,10 @@ class ChatBotApp(QMainWindow):
         elif len(answer)== 4:
             set_answer = input
             if set_answer.lower() == 'yes' or set_answer.lower() == 'true':
-                object_LLM = LLM(answer)
-                return object_LLM.getanswer()
+                self.next_button.setEnabled(True)
+                return answer
+                #object_LLM = LLM(answer)
+                #return object_LLM.getanswer()
             else:
                  return []
         else:
@@ -89,11 +96,3 @@ class ChatBotApp(QMainWindow):
                 else:
                     return answer
 
-def main():
-    app = QApplication(sys.argv)
-    window = ChatBotApp()
-    window.show()
-    sys.exit(app.exec())
-
-if __name__ == "__main__":
-    main()

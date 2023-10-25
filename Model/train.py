@@ -1,6 +1,6 @@
 import sys
 print(sys.path)
-sys.path.append("/Users/michael_khalfin/opt/anaconda3/bin/ultralytics")
+#sys.path.append("/Users/michael_khalfin/opt/anaconda3/bin/ultralytics")
 
 import os
 print(os.getcwd())

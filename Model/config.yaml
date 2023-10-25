@@ -1,7 +1,7 @@
-path: "/Users/michael_khalfin/bosse/Model"
-train: "/Users/michael_khalfin/bosse/Model/Train"
-test: "/Users/michael_khalfin/bosse/Model/Test"
-valid: "/Users/michael_khalfin/bosse/Model/Validate" 
+path: "/Users/noahmeissner/Documents/github/bosse/Model"
+train: "Train"
+test: "Test"
+val: "Validate"
 
 # Classes 
 nc: 1 # replace based on your dataset's number of classes 

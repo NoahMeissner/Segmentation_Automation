@@ -6,9 +6,12 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, Q
 class TrainingApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.send_res = []
 
-        self.setWindowTitle("Training")
+        self.initUI()
+
+    def initUI(self):
+        self.nextPage = False
+        self.setWindowTitle("Bosser")
         self.setGeometry(100, 100, 400, 400)
 
         self.central_widget = QWidget(self)
@@ -16,22 +19,36 @@ class TrainingApp(QMainWindow):
 
         self.layout = QVBoxLayout()
 
-        self.image_label = QLabel()
-        pixmap = QPixmap('python.png')
-        self.image_label.setPixmap(pixmap)
-        self.layout.addWidget(self.image_label)
+        self.messages_label = QLabel(f"System: Train Process")
+        self.messages_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.layout.addWidget(self.messages_label)
 
-        self.train_button = QPushButton("Train")
-        self.layout.addWidget(self.train_button)
+        self.send_button = QPushButton("Start")
+        self.send_button.clicked.connect(self.start_button_clicked)
+        self.layout.addWidget(self.send_button)
+
+        self.next_button = QPushButton("Next")
+        self.next_button.clicked.connect(self.nextButtonClicked)
+        self.next_button.setEnabled(False)
+        self.layout.addWidget(self.next_button)
+
 
         self.central_widget.setLayout(self.layout)
         self.send_button.installEventFilter(self)
 
-def main():
-    app = QApplication(sys.argv)
-    window = TrainingApp()
-    window.show()
-    sys.exit(app.exec())
+    def nextButtonClicked(self):
+        if (self.nextPage == True):
+            return True
+    def start_button_clicked(self):
+            self.messages_label.setText("Pictures in Process")
+            self.send_button.setText("next")
+            self.send_button.setEnabled(False)
+            self.make_pictures()
 
-if __name__ == "__main__":
-    main()
+    def make_pictures(self):
+        #TODO integrate Training
+        import time
+
+        time.sleep(10)
+        self.messages_label.setText("Training finished")
+        self.next_button.setEnabled((True))
