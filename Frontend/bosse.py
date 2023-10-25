@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 from Backend.LLM import LLM
 import sys
 from Backend.chat import getQuestions
