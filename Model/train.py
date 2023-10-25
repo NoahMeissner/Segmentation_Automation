@@ -28,3 +28,11 @@ class Train:
       wipe = Wipe()
       wipe.Wipe_Data()
 
+      result_directory = "~/opt/homebrew/runs/detect/yolov8n_v8_50e16"
+      folders = [f for f in os.listdir(result_directory) if os.path.isdir(os.path.join(result_directory, f))]
+      try:
+         most_recent_folder = folders[0]
+         return most_recent_folder
+      except Exception as e:
+         return e
+

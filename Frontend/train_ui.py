@@ -3,6 +3,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QLabel
 from Model.train import Train
+import json
 class TrainingApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -47,5 +48,14 @@ class TrainingApp(QMainWindow):
 
     def make_pictures(self):
         train_model = Train()
-        train_model.train_model()
+        lib = train_model.train_model()
+        data = {"results": lib + "/results.png",
+                "pred training": lib + "/val_batch1_pred.jpg",
+                "confusion matrix": lib + "/confusion_matrix_normalized.png",
+                "precision recall": lib + "/PR_curve.png"
+                }
+        file_path = f"{lib}.json"
+        with open(file_path, 'w') as json_file:
+            json.dump(data, json_file)
+
         self.next_button.setEnabled((True))
