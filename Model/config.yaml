@@ -1,12 +1,12 @@
-path: "/Users/michael_khalfin/bosse/Model"
+path: "/Users/noahmeissner/Documents/github/bosse/Model"
 train: "Train"
 test: "Test"
 val: "Validate"
 
-# Classes 
+#Classes
 nc: 1 # replace based on your dataset's number of classes
 
-# Class names 
-# replace all class names with your own classes' names 
+#Class names
+#replace all class names with your own classes' names
 names:
   0: 'marker'

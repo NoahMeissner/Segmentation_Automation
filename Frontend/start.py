@@ -1,6 +1,6 @@
 import sys
 from bosse import ChatBotApp
-from train import TrainingApp
+from train_ui import TrainingApp
 from results import TestApp
 
 from PyQt6.QtCore import Qt
@@ -16,6 +16,7 @@ class StartPage(QMainWindow):
 
     def initUI(self):
         self.nextPage = False
+        self.category_list = ['marker']
         self.setWindowTitle("Bosser")
         self.setGeometry(100, 100, 400, 400)
 

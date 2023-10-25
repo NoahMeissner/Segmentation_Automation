@@ -34,3 +34,13 @@ class TestApp(QMainWindow):
         self.grid_layout.addWidget(self.button4, 1, 1)
         self.window.setLayout(self.grid_layout)
 
+def main():
+    app = QApplication([])
+    Test = TestApp()
+    Test.show()
+
+
+    sys.exit(app.exec())
+
+if __name__ == '__main__':
+    main()
