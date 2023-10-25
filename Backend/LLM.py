@@ -7,10 +7,7 @@ class LLM:
     def __init__(self, tuple):
         import openai
         load_dotenv()
-        openai.api_type = os.getenv("API_TYPE")
-        openai.api_base = os.getenv("API_BASE")
-        openai.api_version = os.getenv("API_VERSION")
-        openai.api_key = os.getenv("API_KEY")
+
 
         self.tuple = tuple
         self.prompt = """
@@ -34,7 +31,15 @@ class LLM:
         return p
     
     def get_Information_LLM(self, text):
-        response = openai.Completion.create(
+        openai.api_type = os.getenv("API_TYPE")
+        openai.api_base = os.getenv("API_BASE")
+        openai.api_version = os.getenv("API_VERSION")
+        openai.api_key = os.getenv("API_KEY")
+        print(os.getenv("API_TYPE"))
+        print(os.getenv("API_BASE"))
+        print(os.getenv("API_VERSION"))
+        print(os.getenv("API_KEY"))
+        response = openai.ChatCompletion.create(
         engine="api3_1",
         messages=[{"role": "system", "content": text}],
         temperature=0.7,
@@ -43,8 +48,12 @@ class LLM:
         frequency_penalty=0,
         presence_penalty=0,
         stop=None)
+        print(response)
         return response
 
     def getanswer(self):
-        return self.get_Information_LLM(self.make_prompt()) # false, or information
+        #return "true"
+        a = self.get_Information_LLM(self.make_prompt())
+        print(a)
+        return a # false, or information
 

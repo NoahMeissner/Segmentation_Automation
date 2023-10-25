@@ -1,15 +1,28 @@
-
+from Backend.LLM import LLM
 import sys
 from Backend.chat import getQuestions
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QLabel
-
+import openai
+from dotenv import load_dotenv
+import os
 class ChatBotApp(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.prompt = """I want you to act as a Python interpreter. I will type commands and you will reply with what the
+        python output should show. I want you to only reply with the terminal output inside one unique
+        code block, and nothing else. Do no write explanations, output only what python outputs. Do not type commands unless I
+        instruct you to do so. When I need to tell you something in English I will do so by putting
+        text inside curly brackets like this: {example text}. My first command is a=1.
+        the object is  a {type}, the color of the object is {color}, 
+        the material of the object is {material}, and the size of the object is {size}. Output a Python tuple with the object as a String,
+        the color as a BGR tuple, the material as a String, and the size of the object in meters as an int in that order. If the user's input
+        for any of these parameters is unreasonable, label that slot with the bool False. Do not include any extra words in your answer. 
+        If the user's input is not reasonable, write False."""
+        self.tuple = []
         self.answer = []
         self.object_q = getQuestions()
-
+        load_dotenv()
         self.questions = self.object_q.get_question()
         self.i = 1
         self.setWindowTitle("Bosser")
@@ -43,9 +56,10 @@ class ChatBotApp(QMainWindow):
     def send_message(self):
         user_message = self.user_input.toPlainText()
         self.answer = self.ask_question(user_message, self.answer)
+        print(self.answer)
         self.messages_label.setText(self.messages_label.text() + f"\nUser: {user_message}")
         self.user_input.clear()
-        self.messages_label.setText(self.messages_label.text() + f"\nSystemt: {self.questions[self.i]}")
+        self.messages_label.setText(self.messages_label.text() + f"\nSystem: {self.questions[self.i]}")
         self.i +=1
 
 
@@ -58,17 +72,22 @@ class ChatBotApp(QMainWindow):
                 .replace('${material}', answer[2]) \
                 .replace('${size}', input)
             self.questions[5] = question
+            answer.append(input)
+            return answer
+        elif len(answer)== 4:
             set_answer = input
             if set_answer.lower() == 'yes' or set_answer.lower() == 'true':
-                return answer
+                object_LLM = LLM(answer)
+                return object_LLM.getanswer()
             else:
-                return []
-
+                 return []
         else:
-            set_answer = input
-            if set_answer.lower() != 'yes' and set_answer.lower() != 'true':
-                answer.append(set_answer)
-            return answer
+                set_answer = input
+                if set_answer.lower() != 'yes' and set_answer.lower() != 'true':
+                    answer.append(set_answer)
+                    return answer
+                else:
+                    return answer
 
 def main():
     app = QApplication(sys.argv)
