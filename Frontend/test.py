@@ -1,10 +1,5 @@
-from Model.preprocessing import Preprocess_Data
-from Model.train import Train
-from Backend.wipe_TrainingData import Wipe
 
+from robot.connect import Connect
 
-
-W = Wipe()
-W.Wipe_Data()
-
-
+c = Connect()
+c.start_session()

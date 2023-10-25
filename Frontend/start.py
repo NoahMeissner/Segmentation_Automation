@@ -2,6 +2,7 @@ import sys
 from bosse import ChatBotApp
 from train_ui import TrainingApp
 from results import TestApp
+from robot.connect import Connect
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QLabel, QVBoxLayout
@@ -51,10 +52,8 @@ class StartPage(QMainWindow):
             self.make_pictures()
 
     def make_pictures(self):
-        #TODO integrate Program from Joesph
-        import time
-
-        time.sleep(10)
+        c = Connect()
+        c.start_session()
         self.next_button.setEnabled((True))
 
 
