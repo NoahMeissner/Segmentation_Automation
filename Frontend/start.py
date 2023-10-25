@@ -47,7 +47,6 @@ class StartPage(QMainWindow):
             return True
     def start_button_clicked(self):
             self.messages_label.setText("Pictures in Process")
-            self.send_button.setText("next")
             self.send_button.setEnabled(False)
             self.make_pictures()
 
@@ -64,7 +63,6 @@ class StartPage(QMainWindow):
 
 def main():
     app = QApplication([])
-    Test = TestApp()
     start_page = StartPage()
     next_page = ChatBotApp()
     Train_page = TrainingApp()
@@ -79,6 +77,7 @@ def main():
         Train_page.show()
 
     def open_Test():
+        Test = TestApp()
         Train_page.hide()
         Test.show()
 
@@ -86,6 +85,8 @@ def main():
 
     start_page.next_button.clicked.connect(open_next_page)
     next_page.next_button.clicked.connect(open_Train)
+    Train_page.next_button.clicked.connect(open_Test)
+
 
 
 

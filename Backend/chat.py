@@ -13,9 +13,7 @@ class getQuestions:
       """What material is the object made of? (e.g. wood)""",
       """What size is the object? (e.g. small, medium, large)""",
       """Is this information correct: type: ${type} , color: ${color}, material: ${material}, size: ${size}?""",
-      """Great! You may close the chatbot now. Your object already exists in the database, so there no need
-       to run the model.""",
-      """Great! You may close the chatbot now. We ran the model, and now the object has been added to the database."""]
+      """Great! You may close the chatbot now. We ran the model, and now the object has been added to the database.""","test"]
 
     def get_question(self):
         return self.ls

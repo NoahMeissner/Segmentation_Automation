@@ -3,8 +3,8 @@ from Model.train import Train
 from Backend.wipe_TrainingData import Wipe
 
 
-asdf = Train()
-asdf.train_model()
 
+W = Wipe()
+W.Wipe_Data()
 
 

@@ -54,7 +54,7 @@ class TrainingApp(QMainWindow):
                 "confusion matrix": lib + "/confusion_matrix_normalized.png",
                 "precision recall": lib + "/PR_curve.png"
                 }
-        file_path = f"{lib}.json"
+        file_path = "../Backend/DLmodel_results.json"
         with open(file_path, 'w') as json_file:
             json.dump(data, json_file)
 

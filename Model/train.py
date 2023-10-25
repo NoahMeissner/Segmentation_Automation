@@ -23,12 +23,12 @@ class Train:
          imgsz=512,
          epochs=4,
          batch=1,
-         name='yolov8n_v8_50e'
+         name='../Model/runs/detect/yolov8n_v8_50e'
       )
       wipe = Wipe()
       wipe.Wipe_Data()
 
-      result_directory = "~/opt/homebrew/runs/detect/yolov8n_v8_50e16"
+      result_directory = "../Model/runs/detect"
       folders = [f for f in os.listdir(result_directory) if os.path.isdir(os.path.join(result_directory, f))]
       try:
          most_recent_folder = folders[0]

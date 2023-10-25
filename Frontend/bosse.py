@@ -85,6 +85,7 @@ class ChatBotApp(QMainWindow):
             set_answer = input
             if set_answer.lower() == 'yes' or set_answer.lower() == 'true':
                 self.next_button.setEnabled(True)
+                self.send_button.setEnabled(False)
                 return answer
                 #object_LLM = LLM(answer)
                 #return object_LLM.getanswer()
