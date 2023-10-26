@@ -1,1 +1,1 @@
-{"results": "yolov8n_v8_50e6/results.png", "pred training": "yolov8n_v8_50e6/val_batch1_pred.jpg", "confusion matrix": "yolov8n_v8_50e6/confusion_matrix_normalized.png", "precision recall": "yolov8n_v8_50e6/PR_curve.png"}
+{"results": "yolov8n_v8_50e6/results.png", "pred training": "yolov8n_v8_50e6/val_batch0_pred.jpg", "confusion matrix": "yolov8n_v8_50e6/confusion_matrix_normalized.png", "precision recall": "yolov8n_v8_50e6/PR_curve.png"}
