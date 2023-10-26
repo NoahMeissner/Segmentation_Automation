@@ -1,5 +1,1 @@
-
-from robot.connect import Connect
-
-c = Connect()
-c.start_session()
+  # Uncomment this line to save the image

@@ -4,6 +4,9 @@ from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QLabel
 from Model.train import Train
 import json
+import shutil
+
+
 class TrainingApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -42,11 +45,15 @@ class TrainingApp(QMainWindow):
             return True
     def start_button_clicked(self):
             self.messages_label.setText("Pictures in Process")
-            self.send_button.setText("next")
             self.send_button.setEnabled(False)
             self.make_pictures()
 
     def make_pictures(self):
+        image_source = '../Model/Images/Image0.jpg'
+        csv_source = '../Model/Images/data0.csv'
+        destination_folder = '../Frontend/boundingbox'
+        shutil.copy(image_source, destination_folder)
+        shutil.copy(csv_source, destination_folder)
         train_model = Train()
         lib = train_model.train_model()
         data = {"results": lib + "/results.png",
