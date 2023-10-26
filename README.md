@@ -69,8 +69,8 @@ With this method, we ensure that we never segment the same image twice, and our 
 - <span style="color:blue">**Python**: Python was the main language we used for our frontend and backend.</span>
 - <span style="color:blue">**PyQt6**: PyQt6 was our native GUI toolkit of choice.</span>
 - <span style="color:blue">**Robot Operating System (ROS) & Raspberry Pi**: ROS and a Raspberry Pi Model 4B were used for connecting devices across a 5G network.</span>
-- <span style="color:blue">**3D Camera & Webcam**: The camera, sponsored by _, was responsible for imaging the object every _ seconds; then we could view the output using a webcam.</span>
-- <span style="color:blue">**ABB GoFa Arm**: The arm, sponsored by _, rotated the object in front of the camera, completing the hardware stack.</span>
+- <span style="color:blue">**3D Camera & Webcam**: The Visionary-T Mini camera, sponsored by SICK, was responsible for imaging the object every 4 seconds; then we could view the output using a webcam.</span>
+- <span style="color:blue">**ABB GoFa Arm**: The arm, sponsored by ABB, rotated the object in front of the camera, completing the hardware stack.</span>
 
 ### <span style="color:blue">Advantages</span>
 - **Enhanced Efficiency:** Our innovative approach streamlines the image capture and object outlining process, saving valuable time and reducing manual effort.
@@ -79,6 +79,7 @@ With this method, we ensure that we never segment the same image twice, and our 
 - **Elimination of Redundancy:** Our approach guarantees that the same image is never segmented twice, preventing duplication and ensuring an efficient workflow.
 - **Local Deep Learning Integration:** The locally stored deep learning model simplifies future object identifications, contributing to a seamless and efficient process.
 - **High-Quality Shipments:** The result of our meticulous process is impeccable shipments that consistently meet the highest quality standards.
+- **Dynamically Sample Products:** Painlessly generate new input for the model if it hasn't seen the object before.
 - **Transparent Analysis and Communication:** We maintain a commitment to transparency by providing users with insights into our processes, ensuring you have a clear understanding of the technology and its applications.
 
 ### <span style="color:blue">Acknowledgments</span>
