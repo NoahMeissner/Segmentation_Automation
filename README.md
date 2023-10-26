@@ -47,23 +47,39 @@
   - <span style="color:blue">Email: [jingyanyang94@gmail.com](mailto:jingyanyang94@gmail.com)</span>
   - <span style="color:blue">LinkedIn: [Profile](https://www.linkedin.com/in/jingyan-yang/)</span>
 
-<span style="color:blue"></span>
+### <span style="color:blue">Abstract</span>
+
+<span style="color:blue">As an Amazon logistics worker, your crucial responsibility is to track and ship a wide range of products. Traditionally, this involved labor-intensive tasks like manually labeling images by outlining objects, which could eat up hours of your day or necessitate additional staff.
+
+But now, enter Bosse, the innovation of the future. With Bosse, we've automated this entire process. As products glide down the production line, a precision robotic arm gracefully rotates and captures them from multiple angles. Using cutting-edge technology like computer vision and a 3D camera, Bosse swiftly identifies object coordinates with precision. Your role as a logistics worker? Just answer a few quick questions about the type of object – Bosse's advanced technology handles the rest. It ensures objects are never scanned twice, and deep learning is automatically applied for future identifications.
+
+Bosse: simplifying logistics, streamlining your work, and optimizing efficiency – all in a day's work. </span>
 
 ### <span style="color:blue">How It Works</span>
 
-<span style="color:blue"></span>
+<span style="color:blue">We ensure precision in our image processing by capturing objects from multiple angles. Our cutting-edge computer vision technology automates the task of outlining objects by identifying approximately 500 high-contrast points in each image. To enhance accuracy, we eliminate outlier points, retaining only those that contribute to forming lines or curves.
+
+We input roughly 50 images per object, each of which features labeled regions of interest, into the Ultralytics YOLOv8 Nano model. This model utilizes a small batch size of 1 and is trained over 4 epochs, a careful approach to avoid overfitting the region of interest. This strategy optimizes key metrics such as precision-recall, confidence, and loss.
+
+With this method, we ensure that we never segment the same image twice, and our deep learning model, securely stored locally on your device, is applied seamlessly during future encounters with the object. This meticulous process assures unparalleled accuracy, guaranteeing that your shipments meet the highest quality standards.</span>
 
 ### <span style="color:blue">Technologies Used</span>
 
 <span style="color:blue">Bosse was developed using a powerful combination of technologies, including:</span>
 - <span style="color:blue">**Python**: Python was the main language we used for our frontend and backend.</span>
 - <span style="color:blue">**PyQt6**: PyQt6 was our native GUI toolkit of choice.</span>
-- <span style="color:blue">**Robot Operating System (ROS)**: ROS was used for connecting devices across a 5G network.</span>
-- <span style="color:blue">**3D Camera**: </span>
-- <span style="color:blue">**ABB GoFa Arm**: </span>
-- <span style="color:blue">**Raspberry Pi**: </span>
+- <span style="color:blue">**Robot Operating System (ROS) & Raspberry Pi**: ROS and a Raspberry Pi Model 4B were used for connecting devices across a 5G network.</span>
+- <span style="color:blue">**3D Camera & Webcam**: The camera, sponsored by _, was responsible for imaging the object every _ seconds; then we could view the output using a webcam.</span>
+- <span style="color:blue">**ABB GoFa Arm**: The arm, sponsored by _, rotated the object in front of the camera, completing the hardware stack.</span>
 
 ### <span style="color:blue">Advantages</span>
+- **Enhanced Efficiency:** Our innovative approach streamlines the image capture and object outlining process, saving valuable time and reducing manual effort.
+- **Precision and Reliability:** Our computer vision technology ensures meticulous identification of key points, resulting in highly accurate object segmentation and reduced errors.
+- **Optimized Model Training:** By carefully managing batch sizes and epochs, our Ultralytics YOLOv8 Nano model achieves optimal performance, enhancing precision, recall, and overall accuracy.
+- **Elimination of Redundancy:** Our approach guarantees that the same image is never segmented twice, preventing duplication and ensuring an efficient workflow.
+- **Local Deep Learning Integration:** The locally stored deep learning model simplifies future object identifications, contributing to a seamless and efficient process.
+- **High-Quality Shipments:** The result of our meticulous process is impeccable shipments that consistently meet the highest quality standards.
+- **Transparent Analysis and Communication:** We maintain a commitment to transparency by providing users with insights into our processes, ensuring you have a clear understanding of the technology and its applications.
 
 ### <span style="color:blue">Acknowledgments</span>
 We would like to thank the SICK Solution Hackathon team and all the corporate sponsors at this event. We had a blast spending the week at the SICK SIA Campus, 
