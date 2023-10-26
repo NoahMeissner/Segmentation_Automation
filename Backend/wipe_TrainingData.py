@@ -1,5 +1,4 @@
 import os
-import sys
 class Wipe:
     def __init__(self):
         pass

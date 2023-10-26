@@ -4,7 +4,7 @@ from Backend.LLM import LLM
 import sys
 from Backend.chat import getQuestions
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QLabel
+from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QLabel, QFrame
 import openai
 from dotenv import load_dotenv
 import os
@@ -29,25 +29,32 @@ class ChatBotApp(QMainWindow):
         self.i = 1
         self.setWindowTitle("Bosser")
         self.setGeometry(100, 100, 400, 400)
+        self.setStyleSheet("background-color: #ffffff;")
 
         self.central_widget = QWidget()
+
 
         self.layout = QVBoxLayout()
 
         self.messages_label = QLabel(f"System: {self.questions[0]}")
+        self.messages_label.setStyleSheet("font-size: 18pt")
         self.layout.addWidget(self.messages_label)
 
         self.user_input = QTextEdit()
+
         self.layout.addWidget(self.user_input)
 
         self.send_button = QPushButton("Send")
+        self.send_button.setStyleSheet("font-size: 18pt;background-color: #588b8b")
         self.send_button.clicked.connect(self.send_message)
         self.layout.addWidget(self.send_button)
 
-        self.next_button = QPushButton("next")
+        self.next_button = QPushButton("Next")
         self.next_button.clicked.connect(self.send_message)
+        self.next_button.setStyleSheet("background-color: #588b8b")
         self.next_button.setEnabled(False)
         self.layout.addWidget(self.next_button)
+
 
 
         self.central_widget.setLayout(self.layout)
@@ -85,7 +92,11 @@ class ChatBotApp(QMainWindow):
             set_answer = input
             if set_answer.lower() == 'yes' or set_answer.lower() == 'true':
                 self.next_button.setEnabled(True)
+                self.next_button.setStyleSheet("font-size: 18pt;background-color: #588b8b")
+                self.send_button.setStyleSheet("font-size: 12pt;background-color: #588b8b")
                 self.send_button.setEnabled(False)
+                self.user_input.setEnabled(False)
+                self.user_input.setStyleSheet("background-color: grey")
                 return answer
                 #object_LLM = LLM(answer)
                 #return object_LLM.getanswer()

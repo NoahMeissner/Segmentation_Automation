@@ -11,7 +11,7 @@ class Preprocess_Data:
         pass
     def preprocessing(self):
         print(os.getcwd())
-        input_directory = "../Model/Images"
+        input_directory = "/Users/noahmeissner/Documents/github/bosse/Model/Images"
 
         # Iterate through files in the directory
         for filename in os.listdir(input_directory):
@@ -85,14 +85,14 @@ class Preprocess_Data:
 
         # Define the parent folder and subfolder names
         parent_folder = "../Model"
-        subfolders = ["../Model/Train", "../Model/Validate", "../Model/Test"]
+        subfolders = ["/Users/noahmeissner/Documents/github/bosse/Model/Validate", "/Users/noahmeissner/Documents/github/bosse/Model/Train", "/Users/noahmeissner/Documents/github/bosse/Model/Test"]
 
         # Define the split ratios (60-20-20)
         split_ratios = [0.6, 0.2, 0.2]
         list_paths_res = []
 
         # Define the source folder (Images) and destination subfolders (images and labels)
-        source_folder = "../Model/Images"
+        source_folder = "/Users/noahmeissner/Documents/github/bosse/Model/Images"
         for i in subfolders:
             list_paths_res.append(i+'/'+'images')
             list_paths_res.append(i+'/'+'labels')

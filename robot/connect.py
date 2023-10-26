@@ -55,7 +55,7 @@ from random import randint, choice
 import random
 
 
-directory = r'C:/Users/Wrigh/Desktop/New folder/Python/Images'
+directory = r'../Model/Images'
 # Change the current directory
 # to specified directory
 os.chdir(directory)

@@ -20,21 +20,26 @@ class StartPage(QMainWindow):
         self.category_list = ['marker']
         self.setWindowTitle("Bosser")
         self.setGeometry(100, 100, 400, 400)
+        self.setStyleSheet("background-color: #ffffff;")
 
         self.central_widget = QWidget(self)
         self.setCentralWidget(self.central_widget)
 
         self.layout = QVBoxLayout()
 
-        self.messages_label = QLabel(f"System: Start Process")
+        self.messages_label = QLabel(f"Start Quality Assurance")
+        self.messages_label.setStyleSheet("font-size: 18pt")
         self.messages_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.messages_label)
 
         self.send_button = QPushButton("Start")
+
+        self.send_button.setStyleSheet("font-size: 18pt;background-color: #588b8b")
         self.send_button.clicked.connect(self.start_button_clicked)
         self.layout.addWidget(self.send_button)
 
         self.next_button = QPushButton("Next")
+        self.next_button.setStyleSheet(" background-color: #588b8b")
         self.next_button.clicked.connect(self.nextButtonClicked)
         self.next_button.setEnabled(False)
         self.layout.addWidget(self.next_button)
@@ -49,11 +54,17 @@ class StartPage(QMainWindow):
     def start_button_clicked(self):
             self.messages_label.setText("Pictures in Process")
             self.send_button.setEnabled(False)
+            self.send_button.setStyleSheet("font-size: 12pt;background-color: #588b8b")
             self.make_pictures()
 
     def make_pictures(self):
         c = Connect()
         c.start_session()
+        import time
+        time.sleep(5)
+
+        self.next_button.setStyleSheet("font-size: 18pt;background-color: #588b8b")
+
         self.next_button.setEnabled((True))
 
 

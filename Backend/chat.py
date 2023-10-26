@@ -30,7 +30,7 @@ def ask_question (list, answer):
         if set_answer == 'true':
             return answer
         else:
-            return ask_question(ls, [])
+            return ask_question([], [])
 
     else:
         set_answer = input(list[0]+'\n')
@@ -67,6 +67,3 @@ def assign_color(color_as_String):
     """
     return dict_color(color_as_String)
 
-if __name__ == "__main__":
-    object_LLM = LLM(tuple((ask_question(ls, []))))
-    answer = object_LLM.getanswer()

@@ -1,7 +1,6 @@
 import sys
-from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
-from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QLabel, QGridLayout
+from PyQt6.QtWidgets import QApplication, QMainWindow,QWidget, QLabel, QGridLayout
 import json
 from PIL import Image, ImageDraw
 import csv
@@ -19,21 +18,28 @@ class TestApp(QMainWindow):
             graphDirs = json.load(json_file)
 
         self.setWindowTitle("Bosse")
-        self.setGeometry(100, 100, 400, 400)
+        self.setGeometry(100, 100, 800, 800)
+        self.setStyleSheet("background-color: #ffffff;")
 
         self.window = QWidget(self)
         self.setCentralWidget(self.window)
         self.grid_layout = QGridLayout(self.window)
+        self.grid_layout.setSpacing(10)
 
         # Labels
         self.results_name = QLabel("results")
+        self.results_name.setStyleSheet("font-size: 16pt")
         self.pred_training_name = QLabel("Prediction Training")
+        self.pred_training_name.setStyleSheet("font-size: 16pt")
+
         self.confusion_matrix_name = QLabel("Confusion Matrix")
+        self.confusion_matrix_name.setStyleSheet("font-size: 16pt")
         self.precision_recall_name = QLabel("Precision Recall")
+        self.precision_recall_name.setStyleSheet("font-size: 16pt")
 
         def load_and_resize_image(image_path, xfactor, yfactor):
             image = Image.open(image_path)
-            width = int(400)
+            width = int(600)
             height = int(400)
             image = image.resize((width, height))
             pixmap = QPixmap.fromImage(image.toqimage())
@@ -76,7 +82,7 @@ class TestApp(QMainWindow):
 
         # Define bounding box color and width
         bbox_color = (255, 0, 0)  # Red color
-        bbox_width = 10
+        bbox_width = 2
 
         # Initialize variables to track the current bounding box points
         bbox_points = []
@@ -92,6 +98,7 @@ class TestApp(QMainWindow):
                 bbox_points.append(point[0])
                 bbox_points.append(point[1])
         # Display or save the image with bounding boxes
+        image.save('boundingbox/output_image.png')
 
         self.precision_recall = load_and_resize_image('boundingbox/output_image.png', .2, .2)
 

@@ -15,20 +15,20 @@ class Train:
       sys.path.append(os.getcwd())
 
       # Load the model.
-      model = YOLO('../Model/yolov8n.pt')
+      model = YOLO('/Users/noahmeissner/Documents/github/bosse/Model/yolov8n.pt')
 
       # Training.
       results = model.train(
-         data='../Model/config.yaml',
+         data='/Users/noahmeissner/Documents/github/bosse/Model/yolov8n.pt',
          imgsz=512,
          epochs=4,
          batch=1,
-         name='../Model/runs/detect/yolov8n_v8_50e'
+         name='/Users/noahmeissner/Documents/github/bosse/Model/runs/detect/yolov8n_v8_50e'
       )
       wipe = Wipe()
       wipe.Wipe_Data()
 
-      result_directory = "../Model/runs/detect"
+      result_directory = "/Users/noahmeissner/Documents/github/bosse/Model/runs/detect"
       folders = [f for f in os.listdir(result_directory) if os.path.isdir(os.path.join(result_directory, f))]
       try:
          most_recent_folder = folders[0]
