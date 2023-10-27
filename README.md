@@ -4,7 +4,7 @@
 <span style="color:blue">Effortlessly generating datasets without manual labelling, our innovative solution combines the SICK 3D camera, webcam, and ABB GoFa arm, making it ideal for use in production lines.
 </span>
 
-<img src="pictures/logo.jpeg" width=100% height=100%>
+<img src="pictures/logo.jpeg" width=50% height=50%>
 
 
 ## <span style="color:blue">Team</span>
