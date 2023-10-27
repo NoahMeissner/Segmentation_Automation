@@ -56,7 +56,7 @@ We input roughly 50 images per object, each of which features labeled regions of
 
 With this method, we ensure that we never segment the same image twice, and our deep learning model, securely stored locally on your device, is applied seamlessly during future encounters with the object. This meticulous process assures unparalleled accuracy, guaranteeing that your shipments meet the highest quality standards.</span>
 
-<img src="pictures/image.png" width=75% height=75%>
+<img src="pictures/img.png" width=75% height=75%>
 
 ### <span style="color:blue">Technologies Used</span>
 
