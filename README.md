@@ -1,22 +1,11 @@
-# <span style="color:blue">Bosse: Manual Laboring Automation</span>
+# <span style="color:blue">Bosse: Segmentation Automation</span>
 [![GitHub Repository 1](https://img.shields.io/badge/GitHub-Explore%20the%20Code-blue?logo=github)](https://github.com/NoahMeissner/bosse)
 
 <span style="color:blue">Effortlessly generating datasets without manual labelling, our innovative solution combines the SICK 3D camera, webcam, and ABB GoFa arm, making it ideal for use in production lines.
 </span>
 
-## <span style="color:blue">Table of Contents</span>
+<img src="pictures/logo.jpeg" width=50% height=50%>
 
-<details>
-  <summary><span style="color:blue">Click to Expand</span></summary>
-  <ol>
-    <li><a href="#team"><span style="color:blue">Team</span></a></li>
-    <li><a href="#abstract"><span style="color:blue">Abstract</span></a></li>
-    <li><a href="#how-it-works"><span style="color:blue">How It Works</span></a></li>
-    <li><a href="#technologies-used"><span style="color:blue">Technologies Used</span></a></li>
-    <li><a href="#advantages"><span style="color:blue">Advantages</span></a></li>
-    <li><a href="#acknowledgments"><span style="color:blue">Acknowledgments</span></a></li>
-  </ol>
-</details>
 
 ## <span style="color:blue">Team</span>
 
