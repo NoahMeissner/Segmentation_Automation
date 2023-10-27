@@ -56,7 +56,7 @@ Bosse: simplifying logistics, streamlining your work, and optimizing efficiency 
 
 ### <span style="color:blue">How It Works</span>
 
-[![Demo](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=(https://youtu.be/PGkN7vxiy3s))
+Video: [Video](https://youtu.be/PGkN7vxiy3s)
 
 
 <span style="color:blue">We ensure precision in our image processing by capturing objects from multiple angles. Our cutting-edge computer vision technology automates the task of outlining objects by identifying approximately 500 high-contrast points in each image. To enhance accuracy, we eliminate outlier points, retaining only those that contribute to forming lines or curves.
