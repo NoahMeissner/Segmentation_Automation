@@ -29,7 +29,6 @@
 
 - <span style="color:blue">**Noah Meissner**</span>
   - <span style="color:blue">Organization: University Regensburg</span>
-  - <span style="color:blue">Email: [noah.meissner@t-online.de](mailto:noah.meissner@t-online.de)</span>
   - <span style="color:blue">LinkedIn: [Profile](https://www.linkedin.com/in/noah-mei%C3%9Fner-7391a2245/)</span>
 
 - <span style="color:blue">**Joseph Wright**</span>
@@ -49,7 +48,7 @@
 
 ### <span style="color:blue">Abstract</span>
 
-<span style="color:blue">As an Amazon logistics worker, your crucial responsibility is to track and ship a wide range of products. Traditionally, this involved labor-intensive tasks like manually labeling images by outlining objects, which could eat up hours of your day or necessitate additional staff.
+<span style="color:blue">As an logistics worker, your crucial responsibility is to track and ship a wide range of products. Traditionally, this involved labor-intensive tasks like manually labeling images by outlining objects, which could eat up hours of your day or necessitate additional staff.
 
 But now, enter Bosse, the innovation of the future. With Bosse, we've automated this entire process. As products glide down the production line, a precision robotic arm gracefully rotates and captures them from multiple angles. Using cutting-edge technology like computer vision and a 3D camera, Bosse swiftly identifies object coordinates with precision. Your role as a logistics worker? Just answer a few quick questions about the type of object – Bosse's advanced technology handles the rest. It ensures objects are never scanned twice, and deep learning is automatically applied for future identifications.
 
