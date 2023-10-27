@@ -50,11 +50,13 @@ Video: [Video](https://youtu.be/PGkN7vxiy3s)
 
 <span style="color:blue">We ensure precision in our image processing by capturing objects from multiple angles. Our cutting-edge computer vision technology automates the task of outlining objects by identifying approximately 500 high-contrast points in each image. To enhance accuracy, we eliminate outlier points, retaining only those that contribute to forming lines or curves.
 
-<img src="pictures/presentation.png" width=50% height=50%>
+<img src="pictures/presentation.png" width=75% height=75%>
 
 We input roughly 50 images per object, each of which features labeled regions of interest, into the Ultralytics YOLOv8 Nano model. This model utilizes a small batch size of 1 and is trained over 4 epochs, a careful approach to avoid overfitting the region of interest. This strategy optimizes key metrics such as precision-recall, confidence, and loss.
 
 With this method, we ensure that we never segment the same image twice, and our deep learning model, securely stored locally on your device, is applied seamlessly during future encounters with the object. This meticulous process assures unparalleled accuracy, guaranteeing that your shipments meet the highest quality standards.</span>
+
+<img src="pictures/results.png" width=75% height=75%>
 
 ### <span style="color:blue">Technologies Used</span>
 
